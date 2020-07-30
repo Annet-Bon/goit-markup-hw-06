@@ -236,6 +236,7 @@ p {
 .backdrop.is-hidden {
   visibility: hidden;
   opacity: 0;
+  pointer-events: none;
   transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -248,6 +249,7 @@ p {
   height: 100%;
   background: rgba(0, 0, 0, 0.2);
   transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 5;
 }
 
 .modal {
@@ -257,7 +259,7 @@ p {
   height: 581px;
   top: 50%;
   left: 50%;
-  background: #FFFFFF;
+  background: var(--third-text-color);
   box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12);
   border-radius: 4px;
 
@@ -310,7 +312,8 @@ p {
   transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.form-textarea:focus + .form-label-textarea {
+.form-textarea:focus + .form-label-textarea,
+.form-textarea:not(:placeholder-shown) + .form-label-textarea {
   position: absolute;
   top: -20px;
   left: 20px;
@@ -337,7 +340,6 @@ p {
   line-height: 1.17;
   letter-spacing: 0.01em;
   color: var(--accent-color);
-
 }
 
 .form-input:focus ~ .iconblack {
@@ -474,7 +476,8 @@ svg.iconblack {
   transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.iconclose:focus {
+.iconclose:focus,
+.iconclose:hover {
   fill: var(--accent-color);
 }
 
@@ -592,7 +595,7 @@ svg.iconblack {
   position: relative;
 }
 
-a.service-link {
+.service-item .service-link {
   width: 370px;
 }
 
@@ -747,7 +750,7 @@ a.social-item:focus {
   width: 170px;
   height: 90px;
 
-  border: 1px solid #AFB1B8;
+  border: 1px solid var(--icon-color);
   border-radius: 4px;
 
   fill: var(--icon-color);
@@ -903,7 +906,7 @@ a.invite-social:focus {
   width: 354px;
   padding: 16px;
   margin-right: 12px;
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--fourth-text-color);
 
   border: 1px solid rgba(255, 255, 255, 0.3);
   box-sizing: border-box;
@@ -914,7 +917,7 @@ a.invite-social:focus {
 
 .action-email:not(:placeholder-shown):focus {
   background-color: var(--footer-bg-color);
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--fourth-text-color);
 }
 
 .foot-input {

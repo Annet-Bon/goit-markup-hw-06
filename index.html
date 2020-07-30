@@ -70,10 +70,11 @@
           <button class="btn" data-modal-open>Заказать услугу</button>
         </section>
       </div>
+      <!--Modal-->
       <div class="backdrop is-hidden" data-modal>
         <div class="modal">
           <h2 class="backdrop-title">Оставьте свои данные, мы вам перезвоним</h2>
-          <form class="backdrop-form">
+          <form class="backdrop-form js-form">
             <label class="form-field">
               <input type="text" class="form-input" name="user-name" placeholder=" "/>
               <span for="name" class="form-label">Имя</span>
@@ -96,7 +97,7 @@
               </svg>
             </label>
             <label class="form-field">
-              <textarea name="comment" class="form-textarea"></textarea>
+              <textarea name="comment" class="form-textarea" placeholder=" "></textarea>
               <span for="comment" class="form-label-textarea">Комментарий</span>
             </label>
 
@@ -105,13 +106,13 @@
               <span class="icon-notcheck"></span>
               <p>Соглашаюсь с рассылкой и принимаю <a class="terms" href="#" >Условия договора</a></p>
             </label>
-          </form>
             <button type="submit" class="btn send">Отправить</button>
             <button class="iconclose" data-modal-close>
             <svg class="closeblack">
               <use href="./images/symbol-defs.svg#icon-closeblack"></use>
             </svg>
-          </button>
+            </button>
+          </form>
         </div>
       </div>
 
